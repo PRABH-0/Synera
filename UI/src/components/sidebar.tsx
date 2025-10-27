@@ -24,7 +24,7 @@ const Sidebar: React.FC = () => {
 
         <div className=" absolute top-15  drawer-side is-drawer-close:overflow-visible  ">
           <label htmlFor="my-drawer-4" aria-label="close sidebar" className="drawer-overlay"></label>
-          <div className=" fixed top-15 bottom-0 is-drawer-close:w-14 is-drawer-open:w-64 bg-[#2c2c2c] flex flex-col items-start    ">
+          <div className="  fixed top-15 bottom-0 is-drawer-close:w-14 is-drawer-open:w-54 bg-[#2c2c2c] flex flex-col items-start    ">
             {/* Sidebar content here */}
             <ul className="menu w-full grow bg-[#2c2c2c]">
               <MorePage />

@@ -17,10 +17,10 @@ const CloseButton: React.FC = () => {
                     viewBox="0 0 24 24"
                     strokeLinejoin="round"
                     strokeLinecap="round"
-                    strokeWidth="2"
+                    strokeWidth="1.5"
                     fill="none"
                     stroke="#ffffff"
-                    className="inline-block size-4 my-1.5 w-30"
+                    className="inline-block size-5.5 my-1.5 w-30"
                 >
                     <path d="M4 4m0 2a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2z"></path>
                     <path d="M9 4v16"></path>
