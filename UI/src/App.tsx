@@ -1,32 +1,48 @@
-import './App.css'
-import Sidebar from './components/sidebar'
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import HomePage from './components/HomePage';
-import MatchingPage from './components/MatchingPage';
-import ChattingPage from './components/ChattingPage';
-import ProfilePage from './components/ProfilePage';
-import AboutPage from './components/AboutPage';
-import MorePage from './components/MorePage';
-// import ErrorBoundary from './components/ErrorBoundary';
+import './App.css';
+import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
+
+// Components import
+import Navbar from './components/Navbar/Navbar';
+import Home from './components/Home/Home';
+import Match from './components/Match/Match';
+import Chat from './components/Chat/Chat';
+import Profile from './components/Profile/Profile';
+import About from './components/About/About';
+import More from './components/More/More';
+import Hero from './components/Hero/Hero';
+
+const Layout: React.FC = () => {
+  return (
+    <>
+      <Navbar />
+      <div className="">
+        <Outlet />
+      </div>
+    </>
+  );
+};
 
 const router = createBrowserRouter([
-  {path: "/hashtag", element: <><Sidebar /><MorePage /></>},
-  {path: "/", element: <><Sidebar /><HomePage /></>},
-  {path: "/Matching", element: <><Sidebar /><MatchingPage /></>},
-  {path: "/Chatting", element:<> <Sidebar /><ChattingPage /></>},
-  {path: "/Profile", element: <><Sidebar /><ProfilePage /></>},
-  {path: "/About", element:<><Sidebar /><AboutPage /></>},
-
-])
+  {
+    element: <Layout />,  // Navbar common for all
+    children: [
+      { path: "/", element: <Hero /> },
+      { path: "/Home", element: <Home /> },
+      { path: "/More", element: <More /> },
+      { path: "/Match", element: <Match /> },
+      { path: "/Chat", element: <Chat /> },
+      { path: "/Profile", element: <Profile /> },
+      { path: "/About", element: <About /> },
+    ],
+  },
+]);
 
 function App() {
-
   return (
-    <> 
+    <>
       <RouterProvider router={router} />
-      
     </>
-  )
+  );
 }
 
-export default App
+export default App;
