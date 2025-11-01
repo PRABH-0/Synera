@@ -23,10 +23,10 @@ const Layout: React.FC = () => {
 };
 
 const router = createBrowserRouter([
+  { path: "/", element: <Hero /> },
   {
     element: <Layout />,  // Navbar common for all
     children: [
-      { path: "/", element: <Hero /> },
       { path: "/Home", element: <Home /> },
       { path: "/More", element: <More /> },
       { path: "/Match", element: <Match /> },
